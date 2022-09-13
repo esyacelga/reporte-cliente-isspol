@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.iml
+.idea/
+target
+
+# Eclipse Core
+.project
+.springBeans
+.tern-project
+.settings
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+.ipr
+.iws
+/micro-servicio-reporte-entidad/target
+/isspol.iws
+/isspol.ipr
+/isspol.iml
+/.ideaDataSources/
+/.idea/
