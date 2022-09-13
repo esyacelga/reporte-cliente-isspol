@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="micro-servicio-documento-web" />
+        <module name="micro-servicio-reporte-persistencia" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="micro-servicio-documento-web" target="11" />
+      <module name="micro-servicio-reporte-persistencia" target="11" />
+      <module name="reporte-cliente-isspol" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

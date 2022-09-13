@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/micro-servicio-documento-web/micro-servicio-documento-web.iml" filepath="$PROJECT_DIR$/micro-servicio-documento-web/micro-servicio-documento-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/micro-servicio-reporte-persistencia.iml" filepath="$PROJECT_DIR$/micro-servicio-reporte-persistencia/micro-servicio-reporte-persistencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reporte-cliente-isspol.iml" filepath="$PROJECT_DIR$/reporte-cliente-isspol.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+package ec.org.isspol.mic.documento.web;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ClienteDocumentalApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
