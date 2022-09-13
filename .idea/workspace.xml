@@ -17,7 +17,7 @@
     <session id="-1842194242">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="2" />
@@ -65,7 +65,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="442">
               <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -359,7 +359,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.5018182" side_tool="true" weight="0.11673774" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43810847" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43810847" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8107676" weight="0.44506258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -528,7 +528,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="442">
           <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />

@@ -9,6 +9,7 @@
         <module name="micro-servicio-reporte-entidad" />
         <module name="micro-servicio-reporte-persistencia" />
         <module name="micro-servicio-reporte-rest" />
+        <module name="micro-servicio-servicio-rest" />
       </profile>
     </annotationProcessing>
   </component>
