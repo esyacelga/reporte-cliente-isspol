@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a9d3368-a8a7-478a-8491-fe7970f21a4c" name="Default Changelist" comment="" />
+    <list default="true" id="4716002f-a1f3-4031-a725-276ba7eecde4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/micro-servicio-reporte/target/" />
     <ignored path="$PROJECT_DIR$/micro-servicio-reporte-persistencia/target/" />
-    <ignored path="$PROJECT_DIR$/micro-servicio-documento-web/target/" />
+    <ignored path="$PROJECT_DIR$/micro-servicio-reporte-rest/target/" />
+    <ignored path="$PROJECT_DIR$/micro-servicio-reporte-entidad/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,121 +14,93 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="1253813025">
+    <session id="-1842194242">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="cmd" value="1" />
-          <entry key="java" value="20" />
-          <entry key="properties" value="2" />
-          <entry key="xml" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="20" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="2" />
-          <entry key="XML" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="1" />
-          <entry key="java" value="208" />
-          <entry key="properties" value="1" />
-          <entry key="xml" value="44" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="208" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="1" />
-          <entry key="XML" value="44" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-250293587">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="153" />
-          <entry key="xml" value="35" />
+          <entry key="java" value="194" />
+          <entry key="xml" value="142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="153" />
-          <entry key="XML" value="35" />
+          <entry key="JAVA" value="194" />
+          <entry key="XML" value="142" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="18" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="18" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-documento-web/src/main/java/ec/org/isspol/mic/documento/web/ClienteDocumentalApplication.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="595">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-documento-web/src/main/java/ec/org/isspol/mic/documento/web/controllers/ReporteController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            <state relative-caret-position="266">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/MicroServicioReporteApplication.java">
+        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/RestApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="119">
+              <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ReporteImpl.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.7.3/spring-boot-autoconfigure-2.7.3-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="53" />
+            <state relative-caret-position="-1327">
+              <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/test/java/ec/org/isspol/servicioreporte/rest/RestApplicationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#agregarParametroProcedimiento#0;class#ReporteImpl#0" />
-                <element signature="method#generarNumeroTemplateParametrosProceimiento#0;class#ReporteImpl#0" />
               </folding>
             </state>
           </provider>
@@ -137,30 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IReporte.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/ext/DatoPie.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/ext/DatoCabecera.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/test/java/ec/org/isspol/mic/reporte/persistence/ReporteTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="119">
+              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,36 +123,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>EntityManagerFactory</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="D:/.." />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/micro-servicio-reporte/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteSubreporteId.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/shared/exception/ReportException.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/test/java/ec/org/isspol/mic/reporte/persistence/ReporteTest.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/expediente/Expediente.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IExpediente.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ExpedienteImpl.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/ext/DatoCabecera.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IReporte.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/Reporte.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteGenerado.java" />
         <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/pom.xml" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IReporte.java" />
         <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ReporteImpl.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/components/ReporteComponent.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/AppErrorController.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/src/test/java/ec/org/isspol/servicioreporte/rest/RestApplicationTests.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/micro-servicio-documento-web/pom.xml" />
-        <option value="$PROJECT_DIR$/micro-servicio-documento-web/src/main/java/ec/org/isspol/mic/documento/web/controllers/ReporteController.java" />
-        <option value="$PROJECT_DIR$/micro-servicio-documento-web/src/main/java/ec/org/isspol/mic/documento/web/ClienteDocumentalApplication.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/RestApplication.java" />
+        <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java" />
       </list>
     </option>
   </component>
@@ -220,18 +161,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="32" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1912" />
+    <option name="y" value="206" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -243,108 +182,60 @@
             <path>
               <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
               <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-documento-web" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
               <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-documento-web" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
               <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-documento-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-documento-web" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
               <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-documento-web" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
               <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-documento-web" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rest" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
               <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
+              <item name="micro-servicio-reporte-rest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="reporte" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="reporte" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reporte-cliente-isspol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reporte-cliente-isspol" type="462c0819:PsiDirectoryNode" />
-              <item name="micro-servicio-reporte-persistencia" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="reporte" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,25 +248,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ec.org.isspol.mic.reporte.persistence.entities.expediente" />
-      <recent name="ec.org.isspol.mic.reporte.persistence" />
-      <recent name="ec.org.isspol.mic.reporte.shared.exception" />
+      <recent name="ec.org.isspol.mic.reporte.persistence.entities.reporte" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\codigo-siisspol-web\SIISSPOLWEB-FRONT-END\frontend\isspol-documento\reporte-cliente-isspol\micro-servicio-reporte-persistencia\src\main\java\ec\org\isspol\mic\reporte\persistence\entities\ext" />
-      <recent name="D:\codigo-siisspol-web\SIISSPOLWEB-FRONT-END\frontend\isspol-documento\reporte-cliente-isspol\micro-servicio-reporte-persistencia\src\main\java\ec\org\isspol\mic\reporte\persistence\entities\reporte" />
+      <recent name="D:\codigo-ejemplo\reporte-cliente-isspol\micro-servicio-reporte-entidad\src\main\java\ec\org\isspol\mic\reporte\persistence\entities\reporte" />
     </key>
   </component>
   <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -386,47 +268,38 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.2099567" />
   </component>
-  <component name="RunManager" selected="JUnit.ReporteTest.obtenerReporte">
-    <configuration name="ReporteTest.obtenerReporte" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="micro-servicio-reporte-persistencia" />
+  <component name="RunManager" selected="Spring Boot.RestApplication">
+    <configuration name="RestApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="micro-servicio-reporte-rest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ec.org.isspol.mic.reporte.persistence.*" />
+          <option name="PATTERN" value="ec.org.isspol.servicioreporte.rest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ec.org.isspol.mic.reporte.persistence" />
-      <option name="MAIN_CLASS_NAME" value="ec.org.isspol.mic.reporte.persistence.ReporteTest" />
-      <option name="METHOD_NAME" value="obtenerReporte" />
+      <option name="PACKAGE_NAME" value="ec.org.isspol.servicioreporte.rest" />
+      <option name="MAIN_CLASS_NAME" value="ec.org.isspol.servicioreporte.rest.RestApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteDocumentalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="micro-servicio-documento-web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.org.isspol.mic.documento.web.ClienteDocumentalApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MicroServicioReporteApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="micro-servicio-reporte-persistencia" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.org.isspol.mic.reporte.persistence.MicroServicioReporteApplication" />
+    <configuration name="RestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="micro-servicio-reporte-rest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.org.isspol.servicioreporte.rest.RestApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.MicroServicioReporteApplication" />
-      <item itemvalue="Spring Boot.ClienteDocumentalApplication" />
-      <item itemvalue="JUnit.ReporteTest.obtenerReporte" />
+      <item itemvalue="Spring Boot.RestApplication" />
+      <item itemvalue="JUnit.RestApplicationTests.contextLoads" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReporteTest.obtenerReporte" />
+        <item itemvalue="JUnit.RestApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -435,55 +308,50 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1a9d3368-a8a7-478a-8491-fe7970f21a4c" name="Default Changelist" comment="" />
-      <created>1662991052106</created>
+      <changelist id="4716002f-a1f3-4031-a725-276ba7eecde4" name="Default Changelist" comment="" />
+      <created>1663088744794</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1662991052106</updated>
-      <workItem from="1662991058179" duration="2511000" />
-      <workItem from="1662993603024" duration="1521000" />
-      <workItem from="1663008699926" duration="4139000" />
-      <workItem from="1663014504259" duration="7607000" />
+      <updated>1663088744794</updated>
+      <workItem from="1663088754093" duration="1584000" />
+      <workItem from="1663090455335" duration="9104000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 09h 33m 34s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 13h 31m 31s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 09h 34m 53s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 22m 27s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 09h 36m 30s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 24m 55s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 09h 37m 08s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 25m 45s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 09h 54m 54s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 27m 11s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 09h 55m 51s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 29m 36s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 13h 59m 54s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 30m 00s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 14h 08m 46s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ReporteTest_obtenerReporte - 2022.09.12 at 14h 45m 25s.xml">
-      <configuration name="ReporteTest.obtenerReporte" configurationId="JUnit" />
+    <history-entry file="RestApplicationTests_contextLoads - 2022.09.13 at 14h 52m 03s.xml">
+      <configuration name="RestApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15778000" />
+    <option name="totallyTimeSpent" value="10688000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="206" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49818182" visible="true" weight="0.18496802" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49818182" visible="true" weight="0.24426934" />
       <window_info id="Structure" order="1" sideWeight="0.5018182" side_tool="true" weight="0.11673774" />
       <window_info id="Web" order="2" sideWeight="0.5018182" side_tool="true" weight="0.11673774" />
       <window_info id="Designer" order="3" />
@@ -491,20 +359,19 @@
       <window_info id="Favorites" order="5" sideWeight="0.5018182" side_tool="true" weight="0.11673774" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44605118" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8107676" weight="0.40266964" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43810847" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8107676" weight="0.44506258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3264642" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.2407809" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.4894327" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.42976356" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.18923241" side_tool="true" weight="0.4989154" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329718" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3286334" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.39262474" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.5528365" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3922114" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.10554371" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -528,151 +395,146 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ReporteImpl.java</url>
-          <line>43</line>
+          <url>file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java</url>
+          <line>24</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteGenerado.java">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteSubreporte.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteSubreporte.java">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteSubreporteId.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/shared/exception/ReportException.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/Reporte.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteSubreporteId.java">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/ReporteGenerado.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="204">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-entidad/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/mvnw.cmd">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/test/java/ec/org/isspol/mic/reporte/persistence/MicroServicioReporteApplicationTests.java">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ReporteImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/expediente/Expediente.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IExpediente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ExpedienteImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/ext/DatoPie.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/ext/DatoCabecera.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-documento-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/test/java/ec/org/isspol/mic/reporte/persistence/ReporteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IReporte.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-documento-web/src/main/java/ec/org/isspol/mic/documento/web/controllers/ReporteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/MicroServicioReporteApplication.java">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/impl/ReporteImpl.java">
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="53" />
+        <state relative-caret-position="118">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java/ec/org/isspol/mic/reporte/persistence/entities/reporte/Reporte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/components/ReporteComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#agregarParametroProcedimiento#0;class#ReporteImpl#0" />
-            <element signature="method#generarNumeroTemplateParametrosProceimiento#0;class#ReporteImpl#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/micro-servicio-documento-web/src/main/java/ec/org/isspol/mic/documento/web/ClienteDocumentalApplication.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/AppErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#3166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java/ec/org/isspol/mic/reporte/persistence/service/IReporte.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/test/java/ec/org/isspol/servicioreporte/rest/RestApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.7.3/spring-boot-autoconfigure-2.7.3-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1327">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/RestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/micro-servicio-reporte-rest/src/main/java/ec/org/isspol/servicioreporte/rest/controllers/ReporteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
