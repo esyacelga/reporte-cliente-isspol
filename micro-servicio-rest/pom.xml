@@ -9,9 +9,9 @@
     </parent>
 
     <groupId>ec.org.isspol.servicio-reporte</groupId>
-    <artifactId>micro-servicio-servicio-rest</artifactId>
+    <artifactId>micro-servicio-rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>micro-servicio-servicio-rest</name>
+    <name>micro-servicio-rest</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

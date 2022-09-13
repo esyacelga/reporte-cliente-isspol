@@ -10,7 +10,7 @@
     <modules>
         <module>micro-servicio-reporte-entidad</module>
         <module>micro-servicio-reporte-persistencia</module>
-        <module>micro-servicio-reporte-rest</module>
+        <module>micro-servicio-rest</module>
     </modules>
 
     <packaging>pom</packaging>
