@@ -1,6 +1,6 @@
 package ec.org.isspol.servicioreporte.rest;
 
-import ec.org.isspol.mic.reporte.alternativo.impl.ReporteRepositoryCustomImpl;
+import ec.org.isspol.mic.reporte.persistence.service.impl.ReporteRepositoryCustomImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

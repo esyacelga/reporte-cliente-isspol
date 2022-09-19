@@ -20,8 +20,7 @@ public class ReporteController {
 */
     @RequestMapping("/")
     public String home() throws Exception {
-
-        iReporte.filterBy("reporte-cliente");
+        iReporte.findReporte("reporte-informe-tecnico");
         return "Hello World........";
     }
 
