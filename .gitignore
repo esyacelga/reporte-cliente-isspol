@@ -13,6 +13,10 @@ target
 .ipr
 .iws
 /micro-servicio-reporte-entidad/target
+/micro-servicio-reporte-persistencia/target
+/micro-servicio-reporte-util/target
+/target
+/target
 /isspol.iws
 /isspol.ipr
 /isspol.iml

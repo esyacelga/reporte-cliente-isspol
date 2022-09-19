@@ -1,7 +1,7 @@
 package ec.org.isspol.servicioreporte.rest;
 
 import ec.org.isspol.mic.reporte.persistence.entities.reporte.Reporte;
-import ec.org.isspol.mic.reporte.persistence.service.IReporte;
+import ec.org.isspol.mic.reporte.persistence.service.ReporteRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +13,7 @@ class RestApplicationTests {
 
 
     @Autowired
-    private IReporte iReporte;
+    private ReporteRepository iReporte;
 
     @Test
     void contextLoads() {
