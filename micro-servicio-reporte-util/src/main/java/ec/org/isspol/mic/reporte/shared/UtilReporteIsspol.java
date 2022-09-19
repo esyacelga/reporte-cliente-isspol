@@ -6,7 +6,10 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
+import ec.org.isspol.common.IsspolProcessException;
 import ec.org.isspol.log.IsspolLogger;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import org.apache.commons.lang.StringUtils;
 
 import javax.imageio.IIOImage;
@@ -21,23 +24,27 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.SQLException;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Locale;
+import java.util.Map;
 
-public final class Util {
+public final class UtilReporteIsspol {
 
-    public static final Util UTIL = new Util();
+    public static final UtilReporteIsspol UTIL = new UtilReporteIsspol();
 
     private static String WATERMARK_TEXT_NO_PRINT = "CONFIDENCIAL\n$IDUSUARIO\nNO AUTORIZADO PARA IMPRESION.";
     private static String WATERMARK_TEXT_CHECK_REPORTE = "CONFIDENCIAL\nORIGINAL.";
     private static String COMPRESSION_TYPE_LZW = "LZW";
     private static Integer FONT_SIZE = 30;
 
-    private Util() {
+    private UtilReporteIsspol() {
 
     }
 
-    public static Util getInstance() {
+    public static UtilReporteIsspol getInstance() {
         return UTIL;
     }
 
@@ -153,4 +160,55 @@ public final class Util {
         }
         return outputFile;
     }
+
+    public String generarNumeroTemplateParametrosProceimiento(Map<String, Object> parametros) {
+        int tamanioParametro = parametros != null ? parametros.size() : 0;
+        String numeroParametros = "";
+        if (tamanioParametro != 0) {
+            for (int indice = 0; indice < tamanioParametro; indice++) {
+                numeroParametros += "?";
+                if (indice + 1 < tamanioParametro) {
+                    numeroParametros += ", ";
+                }
+            }
+        }
+
+        return numeroParametros;
+    }
+
+    public void agregarParametroProcedimiento(CallableStatement callableStatement, Map<String, Object> parametros, Integer tipoSalida)
+            throws IsspolProcessException {
+        if (tipoSalida != null) {
+            try {
+                callableStatement.registerOutParameter(1, tipoSalida);
+            } catch (Exception e) {
+                IsspolLogger.getInstance().error("Error al agregar el parametro OUT al procedimiento", e);
+                throw new IsspolProcessException(e);
+            }
+        }
+        for (Map.Entry<String, Object> entry : parametros.entrySet()) {
+            try {
+                callableStatement.setObject(entry.getKey(), entry.getValue());
+            } catch (SQLException e) {
+                IsspolLogger.getInstance().error("Ocurrio un error al agregar el parametro al procedimiento", e);
+                throw new IsspolProcessException(e);
+            }
+        }
+    }
+
+    public Map<String, String> obtenerDirectorioNombreArchivo(String token) throws Exception {
+        Map<String, String> resultado = new LinkedHashMap<String, String>();
+        Claims claims;
+        try {
+            claims = Jwts.parser().parseClaimsJwt(token).getBody();
+            resultado.put("directorio", claims.get("directorio").toString().replace("//", "/"));
+            resultado.put("documento", claims.get("sub").toString().concat("-").concat(claims.get("secuencial").toString()));
+            return resultado;
+        } catch (Exception e) {
+            IsspolLogger.getInstance().error("Error", e);
+            throw new Exception(e);
+        }
+    }
+
+
 }

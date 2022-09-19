@@ -11,10 +11,16 @@
 
     <artifactId>micro-servicio-reporte-persistencia</artifactId>
     <dependencies>
- <!--       <dependency>
-            <groupId>ec.org.isspol.servicio-reporte</groupId>
-            <artifactId>micro-servicio-reporte-entidad</artifactId>
-        </dependency>-->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+       <dependency>
+           <groupId>ec.org.isspol.mic.reporte-cliente-isspol</groupId>
+            <artifactId>micro-servicio-reporte-util</artifactId>
+           <version>1.0-SNAPSHOT</version>
+       </dependency>
         <dependency>
             <groupId>ec.org.isspol.mic.reporte-cliente-isspol</groupId>
             <artifactId>micro-servicio-reporte-entidad</artifactId>
