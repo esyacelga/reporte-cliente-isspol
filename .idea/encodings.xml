@@ -6,8 +6,10 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-cliente-rabbit" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-cliente-rabbit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/micro-servicio-generacion-reporte/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-reporte-entidad" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-reporte-entidad/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/micro-servicio-reporte-generacion/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-reporte-persistencia/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/micro-servicio-reporte-util" charset="UTF-8" />
