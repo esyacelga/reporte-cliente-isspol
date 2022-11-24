@@ -10,12 +10,13 @@
         <module name="micro-servicio-reporte-util" />
         <module name="micro-servicio-cliente-rabbit" />
         <module name="micro-servicio-rest" />
-        <module name="micro-servicio-generacion-reporte" />
         <module name="micro-servicio-reporte-rest" />
         <module name="micro-servicio-reporte-persistencia" />
+        <module name="rest-generacion-reporte" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="micro-servicio-generacion-reporte" target="1.6" />
       <module name="micro-servicio-reporte-generacion" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -28,6 +29,7 @@
       <module name="micro-servicio-reporte-persistencia" options="-parameters" />
       <module name="micro-servicio-reporte-util" options="-parameters" />
       <module name="micro-servicio-rest" options="-parameters" />
+      <module name="rest-generacion-reporte" options="-parameters" />
     </option>
   </component>
 </project>

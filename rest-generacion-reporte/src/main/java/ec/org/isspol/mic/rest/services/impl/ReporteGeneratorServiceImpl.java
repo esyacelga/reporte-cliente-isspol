@@ -1,8 +1,8 @@
-package com.org.isspol.generador.reporte.service.impl;
+package ec.org.isspol.mic.rest.services.impl;
 
-import com.org.isspol.generador.reporte.service.ReporteGeneratorService;
 import ec.org.isspol.common.IsspolSearchException;
 import ec.org.isspol.mic.reporte.persistence.entities.reporte.Reporte;
+import ec.org.isspol.mic.rest.services.ReporteGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

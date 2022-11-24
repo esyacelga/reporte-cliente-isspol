@@ -1,8 +1,8 @@
-package com.org.isspol.generador.reporte.controllers;
+package ec.org.isspol.mic.rest.controller;
 
-import com.org.isspol.generador.reporte.service.ReporteGeneratorService;
 import ec.org.isspol.common.IsspolSearchException;
 import ec.org.isspol.mic.reporte.persistence.entities.reporte.Reporte;
+import ec.org.isspol.mic.rest.services.ReporteGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
