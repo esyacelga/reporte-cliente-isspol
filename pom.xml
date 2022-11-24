@@ -13,7 +13,8 @@
         <module>micro-servicio-reporte-persistencia</module>
         <module>micro-servicio-cliente-rabbit</module>
         <module>micro-servicio-rest</module>
-        <module>micro-servicio-rest</module>
+        <module>rest-generacion-reporte</module>
+
         <!--<module>microservico-reporte-generacion</module>-->
     </modules>
 

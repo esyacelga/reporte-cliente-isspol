@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ec.org.isspol.mic.rest</groupId>
-    <artifactId>generacion-reporte</artifactId>
+    <artifactId>rest-generacion-reporte</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rest-generacion-reporte</name>
     <description>rest-generacion-reporte</description>

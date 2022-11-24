@@ -1,3 +1,4 @@
+/*
 package ec.org.isspol.mic.rest.generacionreporte;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,4 @@ class RestGeneracionReporteApplicationTests {
     }
 
 }
+*/
