@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 class RestApplicationTests {
@@ -15,10 +16,17 @@ class RestApplicationTests {
     @Autowired
     private ReporteRepository iReporte;
 
-    @Test
+/*    @Test
     void contextLoads() {
         List<Reporte> lista = iReporte.findAll();
         lista.size();
+    }*/
+
+    @Test
+    void buscarReportePorId() {
+        Optional<Reporte> reporte= iReporte.findById(25);
+        System.out.println(reporte.get().getDescripcion());
+
     }
 
 }

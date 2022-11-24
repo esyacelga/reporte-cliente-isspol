@@ -1,6 +1,7 @@
 package ec.org.isspol.mic.reporte.persistence.service.impl;
 
 import ec.org.isspol.common.IsspolPersistException;
+import ec.org.isspol.common.IsspolProcessException;
 import ec.org.isspol.common.IsspolSearchException;
 import ec.org.isspol.log.IsspolLogger;
 import ec.org.isspol.mic.reporte.persistence.entities.expediente.Expediente;
@@ -26,14 +27,69 @@ import java.sql.ResultSet;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ReporteRepositoryCustomImpl implements ReporteRepositoryCustom {
+    private static final String[] LST_SUBREPORTE_DEFECTO = new String[]{"subreporte-firma-reporte", "subreporte-pie-reporte", "subreporte-cabecera-reporte",
+            "subreporte-firma-reporte-horizontal", "subreporte-pie-reporte-horizontal", "subreporte-cabecera-reporte-horizontal",
+            "subreporte-cabecera-reporte-excel", "subreporte-cabecera-reporte-horizontal-excel"};
+    private static final String SUB_REPORTE_QR = "subreporte-codigo-qr";
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Override
+    public Collection<ReporteSubreporte> buscarSubReportePorIdReporte(Reporte reporte) {
+        Collection<ReporteSubreporte> lsReporteSubreportes = new ArrayList<>();
+        try {
+            lsReporteSubreportes = buscarSubReportePorIdReporte(reporte.getIdReporte());
+        } catch (Exception ex) {
+            IsspolLogger.getInstance().error("Error ", ex);
+        }
+
+        //Subreporte por defecto
+        try {
+            Reporte reporteFirma;
+            for (String identificadorSubreporte : this.LST_SUBREPORTE_DEFECTO) {
+                reporteFirma = findReporte(identificadorSubreporte);
+                if (ObjectUtils.notEqual(reporteFirma, null)) {
+                    ReporteSubreporte reporteSubreporte = new ReporteSubreporte();
+                    reporteSubreporte.setReporteByIdReporteHijo(reporteFirma);
+                    lsReporteSubreportes.add(reporteSubreporte);
+                }
+            }
+
+            if (Boolean.TRUE.equals(reporte.getQrImprime())) {
+                reporteFirma = findReporte(SUB_REPORTE_QR);
+                if (ObjectUtils.notEqual(reporteFirma, null)) {
+                    ReporteSubreporte reporteSubreporte = new ReporteSubreporte();
+                    reporteSubreporte.setReporteByIdReporteHijo(reporteFirma);
+                    lsReporteSubreportes.add(reporteSubreporte);
+                }
+            }
+        } catch (Exception e) {
+            IsspolLogger.getInstance().error("No se encontro el SubReporte de Firmas", e);
+        }
+
+        return lsReporteSubreportes;
+    }
+
+    @Override
+    public byte[] generaReporteRepository(String nombreReporte, Map<String, Object> parametros, boolean guardarEnBase, String mimeType, boolean dynamicReport, boolean esExcel) throws IsspolProcessException, IsspolSearchException {
+        final Reporte reporte = findReporte(nombreReporte);
+        List<DatoCabecera> resultadoCabecera = procReporteObtenerCabecera(parametros);
+        List<DatoPie> resultadoPie = procReporteObtenerPie(parametros);
+
+        Collection<ReporteSubreporte> lista = buscarSubReportePorIdReporte(reporte);
+        Connection connection = entityManager.unwrap(Connection.class);
+        if (StringUtils.isBlank(nombreReporte)) {
+            throw new IsspolProcessException("El nombre del reporte se encuentra vacio");
+        }
+        return null;//UtilReporteIsspol.getInstance().generarReporte(connection, resultadoCabecera, resultadoPie, nombreReporte, parametros);
+    }
 
     @Override
     public Reporte findReporte(String nameReport) throws IsspolSearchException {
@@ -48,6 +104,35 @@ public class ReporteRepositoryCustomImpl implements ReporteRepositoryCustom {
             throw new IsspolSearchException("No se encontro el reporte con el identificador: " + nameReport, ex);
         } finally {
             entityManager.close();
+        }
+    }
+
+
+    @Override
+    public List<DatoCabecera> procReporteObtenerCabecera(Map<String, Object> parametros) throws IsspolSearchException {
+        try {
+            Map<String, Object> parametrosSP = new HashMap<>();
+            parametrosSP.put("AS_IDENTIFICADOR", MapUtils.getString(parametros, "identificador_reporte", MapUtils.getString(parametros, "identificadorReporte")));
+            parametrosSP.put("ID_REPORTE_GENERADO", MapUtils.getInteger(parametros, "id_reporte_generado", MapUtils.getInteger(parametros, "idReporteGenerado")));
+            return ejecutaSpObtenerCabecera(parametrosSP);
+        } catch (Exception ex) {
+            IsspolLogger.getInstance().error("Error al procReporteObtenerCabecera ", ex);
+            throw new IsspolSearchException("No se pudo generar procReporteObtenerCabecera.", ex);
+        }
+    }
+
+    @Override
+    public List<DatoPie> procReporteObtenerPie(Map<String, Object> parametros) throws IsspolSearchException {
+        try {
+            Map<String, Object> parametrosSP = new HashMap<>();
+            parametrosSP.put("AS_IDENTIFICADOR", MapUtils.getString(parametros, "identificador_reporte", MapUtils.getString(parametros, "identificadorReporte")));
+            parametrosSP.put("REIMPRIME", MapUtils.getBoolean(parametros, "re_imprime", MapUtils.getBoolean(parametros, "reImprime")));
+            parametrosSP.put("ID_INSTANCIA", MapUtils.getInteger(parametros, "id_instancia", MapUtils.getInteger(parametros, "idInstancia")));
+            parametrosSP.put("ID_REPORTE_GENERADO", MapUtils.getInteger(parametros, "id_reporte_generado", MapUtils.getInteger(parametros, "idReporteGenerado")));
+            return ejecutaSpReporteObtenerPie(parametrosSP, MapUtils.getString(parametros, "id_usuario", MapUtils.getString(parametros, "idUsuario")));
+        } catch (Exception ex) {
+            IsspolLogger.getInstance().error("Error al procReporteObtenerPie ", ex);
+            throw new IsspolSearchException("No se pudo generar procReporteObtenerPie.", ex);
         }
     }
 

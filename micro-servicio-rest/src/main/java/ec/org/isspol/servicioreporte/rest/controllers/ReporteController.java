@@ -3,39 +3,27 @@ package ec.org.isspol.servicioreporte.rest.controllers;
 import ec.org.isspol.common.IsspolProcessException;
 import ec.org.isspol.common.IsspolSearchException;
 import ec.org.isspol.log.IsspolLogger;
-import ec.org.isspol.mic.cliente.rabbit.ClienteRabbit;
+import ec.org.isspol.mic.reporte.persistence.entities.reporte.Reporte;
 import ec.org.isspol.mic.reporte.persistence.service.ReporteRepository;
 import ec.org.isspol.mic.reporte.shared.IsspolReporteConstante;
-import ec.org.isspol.mic.reporte.shared.MimeTypeUtil;
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang.ObjectUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.jackrabbit.servlet.ServletRepository;
-import org.apache.tika.mime.MimeTypes;
+import org.apache.commons.collections.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.util.Base64Utils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import javax.jcr.Repository;
 
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServlet;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.net.URLConnection;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class ReporteController {
@@ -45,9 +33,7 @@ public class ReporteController {
     @Autowired
     private ReporteRepository iReporte;
 
-    /*@Autowired
-    private IReporteJpa iReporteJpa;
-*/
+
     @RequestMapping("/")
     public String home(Locale locale, Model model) throws Exception {
         Date date = new Date();
@@ -58,6 +44,52 @@ public class ReporteController {
     }
 
 
+    @GetMapping("/buscar/{id}")
+    public Reporte buscarReporte(@PathVariable Integer id) throws Exception {
+        Optional<Reporte> reporte = iReporte.findById(id);
+        return reporte.get();
+    }
+
+    /*@Autowired
+    private IReporteJpa iReporteJpa;
+*/
+/*
+    @RequestMapping("/")
+    public String home(Locale locale, Model model) throws Exception {
+        Date date = new Date();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+        String formattedDate = dateFormat.format(date);
+        model.addAttribute("serverTime", formattedDate);
+        return "home.....";
+    }
+*/
+
+    @RequestMapping(value = "/generarString", method = {RequestMethod.POST}, consumes = {"application/json"})
+    @ResponseBody
+    public String generarReporteString(@RequestBody Map<String, Object> reporteParametro) throws IsspolProcessException, IsspolSearchException {
+        byte[] reporteResult = null;
+        boolean grabarReporte = MapUtils.getBoolean(reporteParametro, "grabarReporte", Boolean.FALSE);
+        boolean esExcel = MapUtils.getBoolean(reporteParametro, "esExcel", Boolean.FALSE);
+        String nombreReporte = MapUtils.getString(reporteParametro, "nombreReporte");
+        String rutaReporte = MapUtils.getString(reporteParametro, "rutaReporte");
+        Boolean esDinamico = MapUtils.getBoolean(reporteParametro, "esDinamico", Boolean.FALSE);
+        String mimeType = MapUtils.getString(reporteParametro, "mimeType", IsspolReporteConstante.MIME_DEFECTO_PDF);
+        Map<String, Object> parametroReporte = (Map<String, Object>) MapUtils.getObject(reporteParametro, "parametroReporte");
+        try {
+            reporteResult = iReporte.generaReporteRepository(nombreReporte, parametroReporte, grabarReporte, mimeType, esDinamico, esExcel);
+            //Generacion reporte en el file system
+            //Solo si tiene RUTA
+        /*    if (grabarReporte && StringUtils.isNotEmpty(rutaReporte)) {
+                rabbitConnection(rutaReporte, reporteResult, mimeType);
+            }*/
+            return Base64Utils.encodeToString(reporteResult);
+        } catch (IsspolProcessException e) {
+            IsspolLogger.getInstance().error("Error generando el reporte como string " + parametroReporte.toString(), e);
+            throw e;
+        }
+
+    }
+/*
     @RequestMapping(value = "/generarExpediente", method = {RequestMethod.POST})
     @ResponseBody
     public String generarExpedienteByte(@RequestBody Map<String, Object> reporteParametro) throws IsspolProcessException{
@@ -130,5 +162,6 @@ public class ReporteController {
 
     }
 
+*/
 
 }

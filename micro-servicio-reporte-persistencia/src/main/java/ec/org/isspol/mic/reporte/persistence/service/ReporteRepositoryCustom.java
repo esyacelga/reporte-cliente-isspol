@@ -16,6 +16,39 @@ import java.util.Map;
 
 public interface ReporteRepositoryCustom {
 
+
+    /**
+     *
+     * @param parametros
+     * @return
+     * @throws IsspolSearchException
+     */
+    public List<DatoCabecera> procReporteObtenerCabecera(Map<String, Object> parametros) throws IsspolSearchException;
+
+
+    /**
+     *
+     * @param parametros
+     * @return
+     * @throws IsspolSearchException
+     */
+    public List<DatoPie> procReporteObtenerPie(Map<String, Object> parametros) throws IsspolSearchException ;
+
+
+    /**
+     *
+     * @param reporte
+     * @return
+     */
+    public Collection<ReporteSubreporte> buscarSubReportePorIdReporte(Reporte reporte);
+
+    /**
+     * @param nombreReporte
+     * @return
+     * @throws IsspolSearchException
+     */
+    public byte[] generaReporteRepository(String nombreReporte, Map<String, Object> parametros, boolean guardarEnBase, String mimeType, boolean dynamicReport, boolean esExcel) throws IsspolProcessException, IsspolSearchException;
+
     /**
      * @param nameReport
      * @return
@@ -83,7 +116,6 @@ public interface ReporteRepositoryCustom {
 
 
     /**
-     *
      * @param reporteParametro
      * @return
      * @throws IsspolProcessException

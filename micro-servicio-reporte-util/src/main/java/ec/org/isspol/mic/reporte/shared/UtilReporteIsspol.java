@@ -8,8 +8,26 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import ec.org.isspol.common.IsspolProcessException;
 import ec.org.isspol.log.IsspolLogger;
+import ec.org.isspol.mic.reporte.persistence.entities.reporte.Reporte;
+import ec.org.isspol.mic.reporte.persistence.entities.reporte.ReporteSubreporte;
+import ec.org.isspol.mic.reporte.pojo.ext.DatoCabecera;
+import ec.org.isspol.mic.reporte.pojo.ext.DatoPie;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import net.sf.jasperreports.engine.JRParameter;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimpleXlsxReportConfiguration;
+import net.sf.jasperreports.view.JasperViewer;
+import org.apache.commons.lang.ObjectUtils;
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
 
 import javax.imageio.IIOImage;
@@ -24,10 +42,14 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -208,6 +230,153 @@ public final class UtilReporteIsspol {
             IsspolLogger.getInstance().error("Error", e);
             throw new Exception(e);
         }
+    }
+
+    public byte[] generarReporte(Connection connection, List<DatoCabecera> resultadoCabecera, List<DatoPie> resultadoPie, String nombreReporte, Map<String, Object> parametros, boolean guardarEnBase, String mimeType, boolean esDinamico, boolean debugMode, boolean esExcel, Reporte reporte, Collection<ReporteSubreporte> lista) throws IsspolProcessException {
+
+        if (guardarEnBase) {
+            parametros.put("token_reporte", RandomStringUtils.randomAlphanumeric(6));
+        }
+        Map<String, Object> parametrosOriginal = (Map<String, Object>) ObjectUtils.clone(parametros);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        InputStream jasperReportInputStream = null;
+        ByteArrayInputStream byteArrayInputStream = null;
+        JasperPrint jasperPrint = null;
+        byte[] reporteBytes = null;
+
+        try {
+
+            if (!esExcel || ObjectUtils.equals(reporte.getPlantillaExcel(), null)) {
+                if (ObjectUtils.notEqual(reporte.getPlantilla(), null)) {
+                    byteArrayInputStream = new ByteArrayInputStream(reporte.getPlantilla());
+                    jasperReportInputStream = byteArrayInputStream;
+                } else {
+                    throw new IsspolProcessException("No existe un plantilla valida para el reporte: " + nombreReporte);
+                }
+            } else {
+                if (ObjectUtils.notEqual(reporte.getPlantillaExcel(), null)) {
+                    IsspolLogger.getInstance().info("tiene plantilla excel {}", reporte.getIdentificador());
+                    byteArrayInputStream = new ByteArrayInputStream(reporte.getPlantillaExcel());
+                    jasperReportInputStream = byteArrayInputStream;
+                } else {
+                    throw new IsspolProcessException("No existe un plantilla valida para el reporte: " + nombreReporte);
+                }
+            }
+
+
+            //Codigo para subreporte
+            try {
+                JasperReport jasperReportSR;
+                for (ReporteSubreporte reporteSubreporte : lista) {
+                    jasperReportSR = (JasperReport) JRLoader.loadObject(new ByteArrayInputStream(reporteSubreporte.getReporteByIdReporteHijo().getPlantilla()));
+                    parametros.put(StringUtils.isNotEmpty(reporteSubreporte.getParametro()) ? reporteSubreporte.getParametro() : reporteSubreporte.getReporteByIdReporteHijo().getIdentificador(), jasperReportSR);
+                }
+            } catch (Exception e) {
+                IsspolLogger.getInstance().error("Error ejemplo subreporte", e);
+            }
+
+            //Agregar el locale 'en_US'
+            parametros.put(JRParameter.REPORT_LOCALE, Locale.US);
+
+            //Agregar LIST de CABECERA
+            //List<DatoCabecera> resultadoCabecera = ReportePersistenceUtil.getInstance().procReporteObtenerCabecera(parametros);
+            parametros.put("dsCabeceraReporte", resultadoCabecera);
+
+            //Agregar LIST de PIE
+//            List<DatoPie> resultadoPie = ReportePersistenceUtil.getInstance().procReporteObtenerPie(parametros);
+            parametros.put("dsPieReporte", resultadoPie);
+
+            //Generar REPORTE
+            jasperPrint = JasperFillManager.fillReport(jasperReportInputStream, parametros, connection);
+            switch (mimeType) {
+                case "application/pdf": {
+                    JasperExportManager.exportReportToPdfStream(jasperPrint, byteArrayOutputStream);
+                    if (debugMode) {
+                        JasperViewer visor = new JasperViewer(jasperPrint, false);
+                        visor.setVisible(true);
+                    }
+
+                    break;
+                }
+
+                case "application/vnd.ms-excel": {
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.ignore.graphics", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.one.page.per.sheet", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.remove.empty.space.between.rows", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.remove.empty.space.between.columns", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.white.page.background", "false");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.detect.cell.type", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.page.break.no.pagination", "apply");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.sheet.names.all", "Data/Footnotes");
+                    jasperPrint.setProperty("net.sf.jasperreports.print.keep.full.text", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.exports.xls.font.size.fix.enabled", "false");
+
+                    JRXlsxExporter exporter = new JRXlsxExporter();
+                    exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+                    exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(byteArrayOutputStream));
+
+                    SimpleXlsxReportConfiguration xlsReportConfiguration = new SimpleXlsxReportConfiguration();
+                    xlsReportConfiguration.setOnePagePerSheet(Boolean.FALSE);
+                    xlsReportConfiguration.setRemoveEmptySpaceBetweenRows(Boolean.TRUE);
+                    xlsReportConfiguration.setDetectCellType(Boolean.TRUE);
+                    xlsReportConfiguration.setWhitePageBackground(Boolean.FALSE);
+                    exporter.setConfiguration(xlsReportConfiguration);
+
+                    exporter.exportReport();
+                    break;
+                }
+
+                case "application/msword": {
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.ignore.graphics", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.one.page.per.sheet", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.one.page.per.sheet", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.remove.empty.space.between.rows", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.remove.empty.space.between.columns", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.white.page.background", "false");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.detect.cell.type", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.page.break.no.pagination", "apply");
+                    jasperPrint.setProperty("net.sf.jasperreports.export.xls.sheet.names.all", "Data/Footnotes");
+                    jasperPrint.setProperty("net.sf.jasperreports.print.keep.full.text", "true");
+                    jasperPrint.setProperty("net.sf.jasperreports.exports.xls.font.size.fix.enabled", "false");
+                    JRDocxExporter exporter = new JRDocxExporter();
+                    exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+                    exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(byteArrayOutputStream));
+
+                    exporter.exportReport();
+                    break;
+                }
+            }
+            reporteBytes = byteArrayOutputStream.toByteArray();
+            // An Async task always executes in new thread
+         /*   new Thread(new Runnable() {
+                public void run() {
+                    guardarReporteGenerado(guardarEnBase, reporte, parametrosOriginal);
+                }
+            }).start();*/
+        } catch (Exception ex) {
+            throw new IsspolProcessException(ex);
+        } finally {
+            try {
+                if (ObjectUtils.notEqual(byteArrayInputStream, null)) {
+                    byteArrayInputStream.close();
+                }
+                if (ObjectUtils.notEqual(jasperReportInputStream, null)) {
+                    jasperReportInputStream.close();
+                }
+
+                if (ObjectUtils.notEqual(byteArrayOutputStream, null)) {
+                    byteArrayOutputStream.close();
+                }
+                if (ObjectUtils.notEqual(connection, null)) {
+                    connection.close();
+                }
+            } catch (Exception e) {
+                IsspolLogger.getInstance().error("Error", e);
+            }
+        }
+
+        return reporteBytes;
     }
 
 
