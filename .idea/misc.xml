@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/micro-servicio-reporte-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/ec.org.isspol.mic.rest.generador.reporte/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-reporte-generador/pom.xml" />
       </list>
     </option>
   </component>
